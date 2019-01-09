@@ -1,0 +1,15 @@
+# Python
+*.py[cod]
+*.egg
+*.egg-info
+
+# C++
+*.so
+*.[ao]
+
+# vim
+*.swp
+
+# image
+*.jpg
+*.png
