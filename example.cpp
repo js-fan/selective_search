@@ -7,7 +7,7 @@ int main() {
 
     // int num_box = selective_search(image, std::vector<Color>{Color::hsv, Color::lab}, 0.8, std::vector<float>{50, 100, 150}, 20, boxes);
     int num_box = selective_search(image, Mode::fast, boxes);
-    std::cout << num_box << std::endl;
+    std::cout << "Obtained " << num_box << " boxes." << std::endl;
 
     draw_boxes(image, boxes);
     cv::imwrite("./demo/box.jpg", image);

@@ -106,8 +106,8 @@ bool find_max_sim_id(const Vecb2 &neighbours, const std::vector<Vecf2> &sim_mats
 
 void hierarchical_grouping(std::vector<Region> &r, Vecb2 &neighbours, std::vector<Vecf2> &sim_mats,
                            std::vector<Box> &boxes) {
-    for (Region &r : r)
-        boxes.push_back(r.box);
+    for (Region &_r : r)
+        boxes.push_back(_r.box);
 
     const int num_ccs = r.size();
 

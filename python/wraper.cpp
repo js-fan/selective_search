@@ -22,7 +22,6 @@ extern "C" {
 
     int *selective_search_mat(uchar *data, int height, int width,
                               int mode, int *num_box, int min_box) {
-        std::cout << int(data[0]) << ", " << int(data[1]) << std::endl;
         cv::Mat image(height, width, CV_8UC3, data);
         std::vector<Box> _boxes;
 
@@ -41,7 +40,6 @@ extern "C" {
     }
 
     void clear(int *boxes) {
-        // std::cout << boxes << std::endl;
         delete[] boxes;
     }
 }

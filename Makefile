@@ -1,6 +1,11 @@
 CXX = /usr/bin/g++
-CFLAGS = -Iinclude -I/usr/local/include -std=c++11 -O2
-CLINKS = -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -lopencv_highgui
+
+# incoporate your opencv `include` and `lib` here
+OPENCV_INCLUDE = -I/usr/local/include
+OPENCV_LIBRARY = -L/usr/local/lib
+
+CFLAGS = $(OPENCV_INCLUDE) -Iinclude -std=c++11 -O2 -fPIC
+CLINKS = $(OPENCV_LIBRARY) -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -lopencv_highgui
 
 SRCDIR = src
 OBJDIR = build
@@ -8,6 +13,7 @@ OBJDIR = build
 SRCFILES = $(wildcard $(SRCDIR)/*.cpp)
 OBJFILES = $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCFILES))
 
+# Clang in MacOS may not support openmp
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), Linux)
 	CFLAGS += -fopenmp -Duse_openmp_
@@ -22,7 +28,7 @@ example: $(OBJFILES) example.cpp
 
 
 wraper: $(OBJFILES) python/wraper.cpp
-	$(CXX) -o $(OBJDIR)/selective_search.so $^ $(CFLAGS) $(CLINKS) -shared -fPIC
+	$(CXX) -o $(OBJDIR)/selective_search.so $^ $(CFLAGS) $(CLINKS) -shared
 
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
