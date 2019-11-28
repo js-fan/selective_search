@@ -3,18 +3,17 @@ Fast C++ implementation of selective search with python wrapper.
 
 ### Dependencies
 - GCC / Clang
-- Opencv
+- OpenCV
 - Python2 and Numpy
 
 ### Usage
-Firstly, config your opencv path if necessory in the `Makefile`:
+Firstly, config your opencv path if necessary in the `Makefile`:
 ```
 OPENCV_INCLUDE = -I/your/opencv/include
 OPENCV_LIBRARY = -L/your/opencv/lib
 ```
 and compile the codes:
 ```sh
-$ cd selective_search
 $ make -j8
 ```
 
