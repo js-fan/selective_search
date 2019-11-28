@@ -28,7 +28,7 @@ $ python2 example.py
 ```
 
 ### Demo
-![demo](/demo/box.jpg)
+![demo](demo/box.jpg)
 
 ### References
 [1] Felzenszwalb P F, Huttenlocher D P. Efficient graph-based image segmentation[J]. International journal of computer vision, 2004, 59(2): 167-181.
