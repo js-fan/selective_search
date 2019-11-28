@@ -1,1 +1,1 @@
-from wraper import selective_search
+from .wraper import selective_search

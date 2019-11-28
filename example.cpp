@@ -11,5 +11,6 @@ int main() {
 
     draw_boxes(image, boxes);
     cv::imwrite("./demo/box.jpg", image);
+    std::cout << "Saved as ./demo/box.jpg" << std::endl;
     return 0;
 }

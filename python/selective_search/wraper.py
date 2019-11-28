@@ -1,9 +1,10 @@
 from ctypes import cdll, c_int, c_ubyte, byref, POINTER
 import numpy as np
 import os
-_ss = cdll.LoadLibrary(os.path.join(
-    os.path.dirname(os.path.abspath(__file__)).rsplit('/', 2)[0],
-    'build/selective_search.so'))
+libpath = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        'selective_search.so')
+_ss = cdll.LoadLibrary(libpath)
 _ss.selective_search_src.restype = POINTER(c_int)
 _ss.selective_search_mat.restype = POINTER(c_int)
 
