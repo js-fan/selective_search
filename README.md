@@ -28,10 +28,11 @@ $ python2 example.py
 ```
 
 ### Demo
-![demo](demo/box.jpg)
+![demo](/demo/box.jpg)
 
 ### References
 [1] Felzenszwalb P F, Huttenlocher D P. Efficient graph-based image segmentation[J]. International journal of computer vision, 2004, 59(2): 167-181.
+
 [2] Uijlings J R R, Van De Sande K E A, Gevers T, et al. Selective search for object recognition[J]. International journal of computer vision, 2013, 104(2): 154-171.
 
 The code for the segmentation is from:
